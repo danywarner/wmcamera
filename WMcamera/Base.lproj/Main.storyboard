@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WMcamera" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,70 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5A-Qs-opo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpT-Az-dRC">
+                                        <rect key="frame" x="532" y="20" width="62" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="5wN-cj-Jxp"/>
+                                            <constraint firstAttribute="width" constant="62" id="SSr-Ef-5iE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Galería">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="useGallery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QM4-sF-ZGH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u9-ho-TDX">
+                                        <rect key="frame" x="8" y="20" width="64" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="96d-Hw-Thd"/>
+                                            <constraint firstAttribute="width" constant="64" id="seg-g2-nE0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Cámara">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="useCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mZD-2e-qqq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.41357402009999999" blue="0.3698964133" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="LpT-Az-dRC" firstAttribute="top" secondItem="Q5A-Qs-opo" secondAttribute="top" constant="20" id="5kD-LP-IzF"/>
+                                    <constraint firstAttribute="height" constant="50" id="JeO-mG-aqI"/>
+                                    <constraint firstItem="5u9-ho-TDX" firstAttribute="top" secondItem="Q5A-Qs-opo" secondAttribute="top" constant="20" id="qNO-DZ-EV0"/>
+                                    <constraint firstAttribute="trailing" secondItem="LpT-Az-dRC" secondAttribute="trailing" constant="6" id="wnp-gz-lrk"/>
+                                    <constraint firstItem="5u9-ho-TDX" firstAttribute="leading" secondItem="Q5A-Qs-opo" secondAttribute="leading" constant="8" id="yd9-8K-JXB"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TJu-au-FxR">
+                                <rect key="frame" x="0.0" y="50" width="600" height="550"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Q5A-Qs-opo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="1xJ-dD-3YW"/>
+                            <constraint firstItem="TJu-au-FxR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="580-5b-y33"/>
+                            <constraint firstItem="Q5A-Qs-opo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Btj-vs-SPC"/>
+                            <constraint firstItem="TJu-au-FxR" firstAttribute="top" secondItem="Q5A-Qs-opo" secondAttribute="bottom" id="Xkg-6x-JJu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q5A-Qs-opo" secondAttribute="trailing" constant="-20" id="f5j-Yj-2X1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TJu-au-FxR" secondAttribute="bottom" id="r2p-Tp-fOQ"/>
+                            <constraint firstAttribute="trailing" secondItem="TJu-au-FxR" secondAttribute="trailing" id="sth-gS-eNf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="TJu-au-FxR" id="An2-1h-CjZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="325"/>
         </scene>
     </scenes>
 </document>
